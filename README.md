@@ -10,6 +10,10 @@ Pour utiliser la carte CPX dans Arduino, il faut télécharger le gestionnaire d
 
 ![Screenshot de l'interface arduino](./images/screen2.png)
 
+Dans les Outils, on choisit ensuite la carte Circuit Playground Epxress dans `Type de carte` et on choisit le bon port dans la liste.
+
+![Screenshot de l'interface arduino](./images/screen3.png)
+
 Il suffit ensuite d'ajouter la ligne `#include <Adafruit_CircuitPlayground.h>` au début du code, et ajouter la ligne `CircuitPlayground.begin();` dans le setup().
 
 <details>
@@ -97,8 +101,15 @@ Les capteurs capacitifs de la carte sont de A1 à A7, mais sont codés dans le c
 
 On récupère donc leur valeur dans le code arduino avec `CircuitPlayground.readCap(1)` pour A7 par exemple.
 
+Avec la ligne `Serial.write(valeur);`, on envoie en série la valeur détectée des capteurs capacitifs, qui sera reçue dans Processing.
 
 ## Processing
+
+Grâce à la ligne `printArray(Serial.list());`, on écrit dans la console la liste des ports, avec ici le port [5] qui correspond à celui auquel est connectée la carte dans Arduino.
+
+On modifie donc la ligne `String portName = Serial.list()[5];`, qui permet de définir le port de la connexion série entre Arduino et Processing, pour que ça soit donc bien le port de la carte.
+
+![Screenshot de l'interface arduino](./images/screen4.png)
 
 <details>
   <summary> ▶️ Code Processing : CCPX_comm.pde </summary>
@@ -168,3 +179,4 @@ void draw()
 ``` 
 
 </details>
+
