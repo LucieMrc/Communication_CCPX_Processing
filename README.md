@@ -1,6 +1,6 @@
 # Communication entre la Circuit Playground Express et Processing
 
-Le but est de créer une communication série entre la carte Circuit Playground Express d'Arduino, et Processing, notamment en récupérant les valeurs des capteurs capacitifs de la carte.
+**Ou comment créer une communication série entre la carte Circuit Playground Express d'Arduino, et Processing, notamment en récupérant les valeurs des capteurs capacitifs de la carte.**
 
 ## Arduino
 
